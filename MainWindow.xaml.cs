@@ -24,7 +24,15 @@ namespace RelationalAlgebra
         {
             InitializeComponent();
         }
-
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
+        }
+        private void ImgClose_MouseDown(object sender, RoutedEventArgs e) => Close();
+        private void ImgPollUp_MouseDown(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             WorkWindow workWindow = new WorkWindow();

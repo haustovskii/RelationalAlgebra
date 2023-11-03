@@ -6,13 +6,54 @@
     xmlns:local="clr-namespace:RelationalAlgebra"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Реляционная алгебра"
-    Width="600"
-    Height="400"
-    HorizontalContentAlignment="Center"
+    Width="700"
+    Height="500"
+    AllowsTransparency="True"
+    FontSize="20"
     Icon="/Images/icon.ico"
+    ResizeMode="CanResize"
     WindowStyle="None"
     mc:Ignorable="d">
     <Grid>
-        <Button Click="Button_Click" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid MouseDown="Grid_MouseDown">
+            <TextBlock MouseDown="Grid_MouseDown" />
+            <StackPanel HorizontalAlignment="Center">
+                <TextBlock
+                    Margin="0,4"
+                    HorizontalAlignment="Center"
+                    Text="Тренажер «Реляционная алгебра»" />
+            </StackPanel>
+            <StackPanel
+                Margin="5,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Orientation="Horizontal">
+                <Border Style="{StaticResource BrdWindowPollUp}">
+                    <Image
+                        Name="ImgPollUp"
+                        MouseDown="ImgPollUp_MouseDown"
+                        Source="Images/minsize.png"
+                        Style="{StaticResource ImgWindow}" />
+                </Border>
+                <Border Style="{StaticResource BrdWindowClose}">
+                    <Image
+                        Name="ImgClose"
+                        MouseDown="ImgClose_MouseDown"
+                        Source="Images/close.png"
+                        Style="{StaticResource ImgWindow}" />
+                </Border>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Button
+                Width="150"
+                Height="32"
+                Click="Button_Click"
+                Content="Click on me" />
+        </Grid>
     </Grid>
 </Window>

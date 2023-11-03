@@ -8,9 +8,10 @@
     Title="Реляционная алгебра"
     Width="1200"
     Height="800"
-    HorizontalContentAlignment="Center"
+    AllowsTransparency="True"
     FontSize="20"
     Icon="/Images/icon.ico"
+    ResizeMode="CanResize"
     WindowStyle="None"
     mc:Ignorable="d">
     <Grid>
@@ -31,14 +32,14 @@
                 HorizontalAlignment="Right"
                 VerticalAlignment="Top"
                 Orientation="Horizontal">
-                <Border Style="{StaticResource BrdWindow}">
+                <Border Style="{StaticResource BrdWindowPollUp}">
                     <Image
                         Name="ImgPollUp"
                         MouseDown="ImgPollUp_MouseDown"
                         Source="Images/minsize.png"
                         Style="{StaticResource ImgWindow}" />
                 </Border>
-                <Border Style="{StaticResource BrdWindow}">
+                <Border Style="{StaticResource BrdWindowClose}">
                     <Image
                         Name="ImgClose"
                         MouseDown="ImgClose_MouseDown"
@@ -58,15 +59,82 @@
                     <ColumnDefinition Width="0.25*" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <StackPanel>
+                <Grid Margin="10">
                     <!--  Работа с таблицами и справка  -->
-                </StackPanel>
+                    <StackPanel>
+                        <Button
+                            Width="190"
+                            Height="32"
+                            Margin="0,10"
+                            Content="Добавить таблицу" />
+                        <Button
+                            Width="190"
+                            Height="32"
+                            Margin="0,10"
+                            Content="Загрузить таблицы" />
+                        <Button
+                            Width="190"
+                            Height="32"
+                            Margin="0,10"
+                            Content="Сохранить таблицы" />
+                        <Button
+                            Width="190"
+                            Height="32"
+                            Margin="0,10"
+                            Content="Загрузить задание" />
+                        <Button
+                            Width="190"
+                            Height="32"
+                            Margin="0,10"
+                            Content="Показать задание"
+                            IsEnabled="False" />
+                        <Button
+                            Width="190"
+                            Height="32"
+                            Margin="0,10"
+                            Content="Завершить задание"
+                            IsEnabled="False" />
+                    </StackPanel>
+                    <Button
+                        Width="190"
+                        Height="32"
+                        Margin="0,10"
+                        VerticalAlignment="Bottom"
+                        Content="Справка" />
+                </Grid>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.25*" />
-                        <RowDefinition Height="0.3*" />
+                        <RowDefinition Height="0.15*" />
+                        <RowDefinition Height="0.2*" />
                         <RowDefinition />
                     </Grid.RowDefinitions>
+                    <Grid>
+                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <Button
+                                Width="190"
+                                Height="32"
+                                Margin="10"
+                                Content="Сохранить таблицы" />
+                            <TextBox Width="350" Height="32" />
+                        </StackPanel>
+                        <StackPanel
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                Margin="10"
+                                VerticalAlignment="Center"
+                                Text="Имя результата:" />
+                            <TextBox Width="200" Height="32" />
+                        </StackPanel>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <GroupBox HorizontalAlignment="Left" Header="Базовые операции" />
+                        <GroupBox HorizontalAlignment="Right" Header="Дополнительные операции" />
+                    </Grid>
+                    <Border Grid.Row="2" Margin="10" Background="White" BorderBrush="DarkGray" BorderThickness="1">
+                        
+                    </Border>
                 </Grid>
             </Grid>
         </Border>

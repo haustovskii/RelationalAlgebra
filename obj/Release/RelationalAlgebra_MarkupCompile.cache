@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-D:\.тех\VS\RelationalAlgebra\obj\Debug\
+D:\.тех\VS\RelationalAlgebra\obj\Release\
 RelationalAlgebra
 none
 false
-DEBUG;TRACE
+TRACE
 D:\.тех\VS\RelationalAlgebra\App.xaml
 2-25591480
 
@@ -16,5 +16,5 @@ D:\.тех\VS\RelationalAlgebra\App.xaml
 13-1310406943
 MainWindow.xaml;WorkWindow.xaml;
 
-False
+True
 
