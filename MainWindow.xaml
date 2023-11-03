@@ -35,14 +35,14 @@
                 <Border Style="{StaticResource BrdWindowPollUp}">
                     <Image
                         Name="ImgPollUp"
-                        MouseDown="ImgPollUp_MouseDown"
+                        MouseDown="HeaderClass.ImgPollUp_MouseDown"
                         Source="Images/minsize.png"
                         Style="{StaticResource ImgWindow}" />
                 </Border>
                 <Border Style="{StaticResource BrdWindowClose}">
                     <Image
                         Name="ImgClose"
-                        MouseDown="ImgClose_MouseDown"
+                        MouseDown="HeaderClass.ImgClose_MouseDown"
                         Source="Images/close.png"
                         Style="{StaticResource ImgWindow}" />
                 </Border>

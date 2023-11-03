@@ -17,9 +17,10 @@ namespace RelationalAlgebra
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
+    /// </summary>    
     public partial class MainWindow : Window
     {
+        private readonly HeaderClass header;
         public MainWindow()
         {
             InitializeComponent();

@@ -34,3 +34,4 @@ D:\.тех\VS\RelationalAlgebra\obj\Debug\RelationalAlgebra.csproj.GenerateResou
 D:\.тех\VS\RelationalAlgebra\obj\Debug\RelationalAlgebra.csproj.CoreCompileInputs.cache
 D:\.тех\VS\RelationalAlgebra\obj\Debug\RelationalAlgebra.exe
 D:\.тех\VS\RelationalAlgebra\obj\Debug\RelationalAlgebra.pdb
+D:\.тех\VS\RelationalAlgebra\obj\Debug\InfoWindow.g.cs
