@@ -104,20 +104,21 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1*" />
                         <RowDefinition Height="0.15*" />
-                        <RowDefinition Height="0.2*" />
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <Grid>
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                             <Button
-                                Width="190"
+                                Width="230"
                                 Height="32"
                                 Margin="10"
-                                Content="Сохранить таблицы" />
-                            <TextBox Width="350" Height="32" />
+                                Content="Выполнить выражение" />
+                            <TextBox Width="320" Height="32" />
                         </StackPanel>
                         <StackPanel
+                            Margin="10,0"
                             HorizontalAlignment="Right"
                             VerticalAlignment="Center"
                             Orientation="Horizontal">
@@ -125,16 +126,96 @@
                                 Margin="10"
                                 VerticalAlignment="Center"
                                 Text="Имя результата:" />
-                            <TextBox Width="200" Height="32" />
+                            <TextBox Width="170" Height="32" />
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="1">
-                        <GroupBox HorizontalAlignment="Left" Header="Базовые операции" />
-                        <GroupBox HorizontalAlignment="Right" Header="Дополнительные операции" />
+                        <GroupBox
+                            Margin="20,0"
+                            HorizontalAlignment="Left"
+                            Header="Базовые операции">
+                            <StackPanel Orientation="Horizontal">
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="𝖴" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="∩" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="\" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="×" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="σ" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="п" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="⋈" />
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox
+                            Margin="20,0"
+                            HorizontalAlignment="Right"
+                            Header="Дополнительные операции">
+                            <StackPanel Orientation="Horizontal">
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="⟕" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="⟖" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="⟗" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="⋉" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="∧" />
+                                <Button
+                                    Width="32"
+                                    Height="32"
+                                    Margin="10"
+                                    Content="∨" />
+                            </StackPanel>
+                        </GroupBox>
                     </Grid>
-                    <Border Grid.Row="2" Margin="10" Background="White" BorderBrush="DarkGray" BorderThickness="1">
-                        
-                    </Border>
+                    <Border
+                        Grid.Row="2"
+                        Margin="10"
+                        Background="White"
+                        BorderBrush="DarkGray"
+                        BorderThickness="1" />
                 </Grid>
             </Grid>
         </Border>
