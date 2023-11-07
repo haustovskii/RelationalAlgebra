@@ -115,5 +115,8 @@
     <Resource Include="Images\close.png" />
     <Resource Include="Images\minsize.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="InfoHtml\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
