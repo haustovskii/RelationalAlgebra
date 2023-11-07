@@ -35,3 +35,4 @@ D:\.тех\VS\RelationalAlgebra\obj\Debug\RelationalAlgebra.csproj.CoreCompileIn
 D:\.тех\VS\RelationalAlgebra\obj\Debug\RelationalAlgebra.exe
 D:\.тех\VS\RelationalAlgebra\obj\Debug\RelationalAlgebra.pdb
 D:\.тех\VS\RelationalAlgebra\obj\Debug\InfoWindow.g.cs
+D:\.тех\VS\RelationalAlgebra\obj\Debug\InfoWindow.baml

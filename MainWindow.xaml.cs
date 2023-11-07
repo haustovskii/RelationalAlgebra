@@ -20,7 +20,6 @@ namespace RelationalAlgebra
     /// </summary>    
     public partial class MainWindow : Window
     {
-        private readonly HeaderClass header;
         public MainWindow()
         {
             InitializeComponent();

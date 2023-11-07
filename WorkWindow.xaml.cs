@@ -33,5 +33,11 @@ namespace RelationalAlgebra
         }
         private void ImgClose_MouseDown(object sender, RoutedEventArgs e) => Close();
         private void ImgPollUp_MouseDown(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
+
+        private void BtnOpenInfo_Click(object sender, RoutedEventArgs e)
+        {
+            InfoWindow infoWindow = new InfoWindow();
+            infoWindow.Show();
+        }
     }
 }

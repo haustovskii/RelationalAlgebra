@@ -10,6 +10,7 @@
     Height="500"
     AllowsTransparency="True"
     FontSize="20"
+    WindowStartupLocation="CenterScreen"
     Icon="/Images/icon.ico"
     ResizeMode="CanResize"
     WindowStyle="None"

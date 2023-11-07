@@ -11,6 +11,7 @@
     FontSize="20"
     Icon="/Images/icon.ico"
     ResizeMode="CanResize"
+    WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
     <Grid>
@@ -97,6 +98,8 @@
                     <Button
                         Width="190"
                         Height="32"
+                        Name="BtnOpenInfo"
+                        Click="BtnOpenInfo_Click"
                         Margin="0,10"
                         VerticalAlignment="Bottom"
                         Content="Справка" />
