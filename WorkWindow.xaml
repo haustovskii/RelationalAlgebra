@@ -50,7 +50,7 @@
         </Grid>
         <Border
             Grid.Row="1"
-            Margin="5,0"
+            Margin="5"
             Background="LightGray"
             BorderBrush="DarkGray"
             BorderThickness="1">
@@ -63,19 +63,25 @@
                     <!--  Работа с таблицами и справка  -->
                     <StackPanel>
                         <Button
+                            Name="BtnAddTable"
                             Width="190"
                             Height="32"
                             Margin="0,10"
+                            Click="BtnAddTable_Click"
                             Content="Добавить таблицу" />
                         <Button
+                            Name="BtnLoadTables"
                             Width="190"
                             Height="32"
                             Margin="0,10"
+                            Click="BtnLoadTables_Click"
                             Content="Загрузить таблицы" />
                         <Button
+                            Name="BtnSaveTables"
                             Width="190"
                             Height="32"
                             Margin="0,10"
+                            Click="BtnSaveTables_Click"
                             Content="Сохранить таблицы" />
                         <Button
                             Width="190"
@@ -96,12 +102,12 @@
                             IsEnabled="False" />
                     </StackPanel>
                     <Button
+                        Name="BtnOpenInfo"
                         Width="190"
                         Height="32"
-                        Name="BtnOpenInfo"
-                        Click="BtnOpenInfo_Click"
                         Margin="0,10"
                         VerticalAlignment="Bottom"
+                        Click="BtnOpenInfo_Click"
                         Content="Справка" />
                 </Grid>
                 <Grid Grid.Column="1">
@@ -151,7 +157,7 @@
                                     Width="32"
                                     Height="32"
                                     Margin="10"
-                                    Content="\" />
+                                    Content="/" />
                                 <Button
                                     Width="32"
                                     Height="32"
@@ -217,7 +223,9 @@
                         Margin="10"
                         Background="White"
                         BorderBrush="DarkGray"
-                        BorderThickness="1" />
+                        BorderThickness="1">
+                        <TabControl x:Name="MainTabControl" />
+                    </Border>
                 </Grid>
             </Grid>
         </Border>
