@@ -213,5 +213,8 @@
   <ItemGroup>
     <Folder Include="InfoHtml\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\back.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
