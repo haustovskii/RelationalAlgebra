@@ -123,7 +123,10 @@
                                 Height="32"
                                 Margin="10"
                                 Content="Выполнить выражение" />
-                            <TextBox Width="320" Height="32" />
+                            <TextBox
+                                Name="TbxOperation"
+                                Width="320"
+                                Height="32" />
                         </StackPanel>
                         <StackPanel
                             Margin="10,0"
@@ -134,7 +137,7 @@
                                 Margin="10"
                                 VerticalAlignment="Center"
                                 Text="Имя результата:" />
-                            <TextBox Width="170" Height="32" />
+                            <TextBox Name="TbxResult" IsReadOnly="True" Width="170" Height="32" />
                         </StackPanel>
                     </Grid>
                     <Grid Grid.Row="1">
@@ -147,36 +150,43 @@
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="𝖴" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="∩" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="/" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="×" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="σ" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="п" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="⋈" />
                             </StackPanel>
                         </GroupBox>
@@ -189,31 +199,37 @@
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="⟕" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="⟖" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="⟗" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="⋉" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="∧" />
                                 <Button
                                     Width="32"
                                     Height="32"
                                     Margin="10"
+                                    Click="OperationButton_Click"
                                     Content="∨" />
                             </StackPanel>
                         </GroupBox>

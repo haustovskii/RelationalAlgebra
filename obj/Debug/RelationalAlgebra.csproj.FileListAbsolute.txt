@@ -62,3 +62,5 @@ D:\.тех\VS\RelationalAlgebra\bin\Debug\System.Numerics.Vectors.xml
 D:\.тех\VS\RelationalAlgebra\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\.тех\VS\RelationalAlgebra\obj\Debug\AddTableWindow.g.cs
 D:\.тех\VS\RelationalAlgebra\obj\Debug\AddTableWindow.baml
+D:\.тех\VS\RelationalAlgebra\obj\Debug\NameColumnWindow.g.cs
+D:\.тех\VS\RelationalAlgebra\obj\Debug\NameColumnWindow.baml

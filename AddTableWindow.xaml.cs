@@ -24,7 +24,6 @@ namespace RelationalAlgebra
             InitializeComponent();
         }
         public string TableName => TbxNameTable.Text;
-
         // Свойство для количества столбцов
         public int ColumnCount
         {
@@ -41,7 +40,7 @@ namespace RelationalAlgebra
             {
                 this.DragMove();
             }
-        }
+        }        
         private void ImgClose_MouseDown(object sender, RoutedEventArgs e) => Close();
         private void ImgPollUp_MouseDown(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
 
@@ -52,7 +51,12 @@ namespace RelationalAlgebra
 
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
+        }
+
+        private void TbxCountColumns_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
         }
     }
 }

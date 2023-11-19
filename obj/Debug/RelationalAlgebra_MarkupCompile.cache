@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\.тех\VS\RelationalAlgebra\App.xaml
-4-250704185
+5681597818
 
-92133289989
+91838778084
 1321375833135
-AddTableWindow.xaml;InfoWindow.xaml;MainWindow.xaml;WorkWindow.xaml;
+AddTableWindow.xaml;InfoWindow.xaml;MainWindow.xaml;NameColumnWindow.xaml;WorkWindow.xaml;
 
-True
+False
 

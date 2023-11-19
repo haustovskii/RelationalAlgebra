@@ -124,10 +124,47 @@ namespace RelationalAlgebra
             tableName = addTable.TableName;
             columnCount = addTable.ColumnCount;
 
-            MessageBox.Show($"{tableName} с {columnCount} столбцов");
+            // Создаем новую таблицу
+            DataTable newTable = new DataTable(tableName);
+
+            // Добавляем столбцы в новую таблицу
+            for (int i = 0; i < columnCount; i++)
+            {
+                NameColumnWindow nameColumnWindow = new NameColumnWindow(tableName)
+                {
+                    Owner = this
+                };
+                nameColumnWindow.ShowDialog();
+                string columnName = nameColumnWindow.NameTable;
+                newTable.Columns.Add(columnName);
+            }
+
+            // Создаем новую вкладку
+            TabItem newTabItem = new TabItem
+            {
+                Header = tableName,
+                Content = new DataGrid // Используем DataGrid для отображения таблицы
+                {
+                    Name = tableName + "DataGrid",
+                    ItemsSource = newTable.DefaultView // Используем DefaultView для привязки данных
+                }
+            };
+
+            // Добавляем вкладку в MainTabControl
+            MainTabControl.Items.Add(newTabItem);
+
+            MessageBox.Show($"{tableName} с {columnCount} столбцов добавлена");
         }
+
         private void BtnLoadTables_Click(object sender, RoutedEventArgs e)
         {
+            if (MainTabControl.Items != null)
+            {
+                MessageBoxResult message = MessageBox.Show("Существующие данные будут удалены, продолжить?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (message == MessageBoxResult.No)
+                    return;
+            }
+            MainTabControl.Items.Clear();
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Filter = "Excel Files|*.xls;*.xlsx"
@@ -220,6 +257,20 @@ namespace RelationalAlgebra
             }
             return value.ToString();
         }
+        private string currentOperation; // Объявляем переменную currentOperation
+        private void OperationButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                // Получаем текст из свойства Content кнопки
+                string operation = button.Content?.ToString();
 
+                // Добавляем текст к текущей операции
+                currentOperation += operation;
+
+                // Устанавливаем текущую операцию в TextBox
+                TbxOperation.Text = currentOperation;
+            }
+        }
     }
 }

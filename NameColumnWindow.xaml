@@ -1,12 +1,12 @@
 ﻿<Window
-    x:Class="RelationalAlgebra.AddTableWindow"
+    x:Class="RelationalAlgebra.NameColumnWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:RelationalAlgebra"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Name="WndAddTable"
-    Width="450"
+    Title="NameColumnWindow"
+    Width="350"
     Height="200"
     AllowsTransparency="True"
     FontSize="20"
@@ -25,9 +25,10 @@
                 <TextBlock MouseDown="Grid_MouseDown" />
                 <StackPanel HorizontalAlignment="Center">
                     <TextBlock
+                        Name="TblName"
                         Margin="0,4"
                         HorizontalAlignment="Center"
-                        Text="Новая таблица" />
+                        Text="Таблица User" />
                 </StackPanel>
                 <StackPanel
                     Margin="5,0"
@@ -57,24 +58,17 @@
                 BorderBrush="DarkGray"
                 BorderThickness="1">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <StackPanel Orientation="Horizontal">
-                        <StackPanel>
-                            <TextBlock Margin="7" Text="Имя таблицы" />
-                            <TextBlock Margin="7" Text="Количество столбцов" />
-                        </StackPanel>
-                        <StackPanel>
-                            <TextBox
-                                Name="TbxNameTable"
-                                Width="180"
-                                Height="32"
-                                Margin="5" />
-                            <TextBox
-                                Name="TbxCountColumns"
-                                Width="180"
-                                Height="32"
-                                Margin="5"
-                                PreviewTextInput="TbxCountColumns_PreviewTextInput" />
-                        </StackPanel>
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock
+                            Margin="5"
+                            Text="Имя столбца"
+                            TextAlignment="Center" />
+                        <TextBox
+                            Name="TbxNameTable"
+                            Width="180"
+                            Height="32"
+                            Margin="5"
+                            HorizontalAlignment="Center" />
                     </StackPanel>
                     <StackPanel
                         Margin="5"
@@ -87,13 +81,6 @@
                             Margin="5"
                             Click="BtnOk_Click"
                             Content="ОК" />
-                        <Button
-                            Name="BtnClose"
-                            Width="100"
-                            Height="32"
-                            Margin="5"
-                            Click="BtnClose_Click"
-                            Content="Отмена" />
                     </StackPanel>
                 </StackPanel>
             </Border>
