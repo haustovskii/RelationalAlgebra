@@ -37,5 +37,63 @@
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="BorderThickness" Value="0" />
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Width" Value="190" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="Background" Value="#d9d8dc"/>
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect
+            BlurRadius="15"
+            Direction="-90"
+            Opacity="0.2"
+            ShadowDepth="7"
+            Color="Gray" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BtnHelp" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style x:Key="BrdHelp" TargetType="Border">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="Background" Value="#ffa809" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="-90"
+                        Opacity="0.3"
+                        ShadowDepth="7"
+                        Color="Gray" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BtnOperation" TargetType="Button">
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Padding" Value="0,-5,0,0" />
+            <Setter Property="FontSize" Value="28" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect
+                        BlurRadius="5"
+                        Direction="-60"
+                        ShadowDepth="3"
+                        Color="Gray" />
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

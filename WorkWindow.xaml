@@ -14,19 +14,7 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
-    <Window.Resources>
-        <Style x:Key="BtnOperation" TargetType="Button">
-            <Setter Property="Width" Value="40" />
-            <Setter Property="Height" Value="40" />
-            <Setter Property="Background" Value="White" />
-            <Setter Property="Margin" Value="10" />
-            <Setter Property="VerticalContentAlignment" Value="Center" />
-            <Setter Property="HorizontalContentAlignment" Value="Center" />
-            <Setter Property="Padding" Value="0,-5,0,0" />
-            <Setter Property="FontSize" Value="28" />
-        </Style>
-    </Window.Resources>
-    <Grid>
+    <Grid Background="#182d33">
         <Grid.RowDefinitions>
             <RowDefinition Height="35" />
             <RowDefinition />
@@ -37,6 +25,8 @@
                 <TextBlock
                     Margin="0,4"
                     HorizontalAlignment="Center"
+                    FontWeight="SemiBold"
+                    Foreground="White"
                     Text="Работа с таблицами" />
             </StackPanel>
             <StackPanel
@@ -48,14 +38,14 @@
                     <Image
                         Name="ImgPollUp"
                         MouseDown="ImgPollUp_MouseDown"
-                        Source="Images/minsize.png"
+                        Source="Images/minsizewhite.png"
                         Style="{StaticResource ImgWindow}" />
                 </Border>
                 <Border Style="{StaticResource BrdWindowClose}">
                     <Image
                         Name="ImgClose"
                         MouseDown="ImgClose_MouseDown"
-                        Source="Images/close.png"
+                        Source="Images/closewhite.png"
                         Style="{StaticResource ImgWindow}" />
                 </Border>
             </StackPanel>
@@ -63,8 +53,7 @@
         <Border
             Grid.Row="1"
             Margin="5"
-            Background="LightGray"
-            BorderBrush="DarkGray"
+            Background="#e5dfd3"
             BorderThickness="1">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -78,57 +67,147 @@
                             Name="BtnAddTable"
                             Width="190"
                             Height="32"
-                            Margin="0,10"
+                            Margin="10"
                             Click="BtnAddTable_Click"
                             Content="Добавить таблицу" />
                         <Button
                             Name="BtnLoadTables"
                             Width="190"
                             Height="32"
-                            Margin="0,10"
+                            Margin="10"
                             Click="BtnLoadTables_Click"
                             Content="Загрузить таблицы" />
                         <Button
                             Name="BtnSaveTables"
-                            Width="190"
-                            Height="32"
-                            Margin="0,10"
                             Click="BtnSaveTables_Click"
                             Content="Сохранить таблицы" />
-                        <Button
-                            Width="190"
-                            Height="32"
-                            Margin="0,10"
-                            Content="Загрузить задание" />
-                        <Button
-                            Width="190"
-                            Height="32"
-                            Margin="0,10"
-                            Content="Показать задание"
-                            IsEnabled="False" />
-                        <Button
-                            Width="190"
-                            Height="32"
-                            Margin="0,10"
-                            Content="Завершить задание"
-                            IsEnabled="False" />
+                        <Button Content="Загрузить задание" />
+                        <Button Content="Показать задание" IsEnabled="False" />
+                        <Button Content="Завершить задание" IsEnabled="False" />
                     </StackPanel>
-                    <Button
-                        Name="BtnOpenInfo"
-                        Width="190"
-                        Height="32"
-                        Margin="0,10"
-                        VerticalAlignment="Bottom"
-                        Click="BtnOpenInfo_Click"
-                        Content="Справка" />
+                    <Border VerticalAlignment="Bottom" Style="{StaticResource BrdHelp}">
+                        <Button
+                            Name="BtnOpenInfo"
+                            Click="BtnOpenInfo_Click"
+                            Content="Справка"
+                            Style="{StaticResource BtnHelp}" />
+                    </Border>
                 </Grid>
                 <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="373*" />
+                        <ColumnDefinition Width="102*" />
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="0.1*" />
-                        <RowDefinition Height="0.15*" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Grid>
+                    <Border
+                        Grid.ColumnSpan="2"
+                        Height="100"
+                        Margin="40,5,40,5"
+                        Background="#386977"
+                        CornerRadius="20">
+                        <Border.Effect>
+                            <DropShadowEffect
+                                BlurRadius="5"
+                                Direction="-90"
+                                ShadowDepth="3"
+                                Color="Gray" />
+                        </Border.Effect>
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <StackPanel>
+                                <TextBlock
+                                    Margin="0,7,0,0"
+                                    Foreground="White"
+                                    Text="Базовые операции"
+                                    TextAlignment="Center" />
+                                <StackPanel Orientation="Horizontal">
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="𝖴"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="∩"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="/"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="×"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="σ"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="п"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="⋈"
+                                        Style="{StaticResource BtnOperation}" />
+                                </StackPanel>
+                            </StackPanel>
+                            <Border
+                                Width="2"
+                                Height="75"
+                                Margin="10,15,10,10"
+                                BorderThickness="1">
+                                <Border.BorderBrush>
+                                    <VisualBrush>
+                                        <VisualBrush.Visual>
+                                            <Rectangle
+                                                Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Border}}, Path=ActualWidth}"
+                                                Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Border}}, Path=ActualHeight}"
+                                                Stroke="White"
+                                                StrokeDashArray="3 4.3"
+                                                StrokeThickness="3" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Border.BorderBrush>
+                            </Border>
+                            <StackPanel>
+                                <TextBlock
+                                    Margin="0,7,0,0"
+                                    Foreground="White"
+                                    Text="Дополнительные операции"
+                                    TextAlignment="Center" />
+                                <StackPanel Orientation="Horizontal">
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="⟕"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="⟖"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="⟗"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="⋉"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="∧"
+                                        Style="{StaticResource BtnOperation}" />
+                                    <Button
+                                        Click="OperationButton_Click"
+                                        Content="∨"
+                                        Style="{StaticResource BtnOperation}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <Grid Grid.Row="1" Grid.ColumnSpan="2">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
                             <Button
                                 Width="230"
@@ -156,104 +235,10 @@
                                 IsReadOnly="True" />
                         </StackPanel>
                     </Grid>
-                    <Grid Grid.Row="1">
-                        <Border
-                            Margin="40,0"
-                            Background="#386977"
-                            CornerRadius="20">
-                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                                <StackPanel>
-                                    <TextBlock
-                                        Foreground="White"
-                                        Text="Базовые операции"
-                                        TextAlignment="Center" />
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="𝖴"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="∩"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="/"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton  _Click"
-                                            Content="×"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="σ"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="п"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="⋈"
-                                            Style="{StaticResource BtnOperation}" />
-                                    </StackPanel>
-                                </StackPanel>
-                                <Border
-                                    Width="2"
-                                    Height="65"
-                                    Margin="10,0,10,10"
-                                    BorderThickness="1">
-                                    <Border.BorderBrush>
-                                        <VisualBrush>
-                                            <VisualBrush.Visual>
-                                                <Rectangle
-                                                    Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Border}}, Path=ActualWidth}"
-                                                    Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Border}}, Path=ActualHeight}"
-                                                    Stroke="White"
-                                                    StrokeDashArray="2.5 4.3"
-                                                    StrokeThickness="3" />
-                                            </VisualBrush.Visual>
-                                        </VisualBrush>
-                                    </Border.BorderBrush>
-                                </Border>
-                                <StackPanel>
-                                    <TextBlock
-                                        Foreground="White"
-                                        Text="Дополнительные операции"
-                                        TextAlignment="Center" />
-                                    <StackPanel Orientation="Horizontal">
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="⟕"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="⟖"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="⟗"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="⋉"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="∧"
-                                            Style="{StaticResource BtnOperation}" />
-                                        <Button
-                                            Click="OperationButton_Click"
-                                            Content="∨"
-                                            Style="{StaticResource BtnOperation}" />
-                                    </StackPanel>
-                                </StackPanel>
-                            </StackPanel>
-                        </Border>
-                    </Grid>
                     <Border
                         Grid.Row="2"
-                        Margin="10"
+                        Grid.ColumnSpan="2"
+                        Margin="10,10,10,10"
                         Background="White"
                         BorderBrush="DarkGray"
                         BorderThickness="1">
