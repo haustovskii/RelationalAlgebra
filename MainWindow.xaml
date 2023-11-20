@@ -51,7 +51,7 @@
         </Grid>
         <Grid Grid.Row="1">
             <Button
-                Width="150"
+                Width="170"
                 Height="32"
                 Click="Button_Click"
                 Content="Click on me" />

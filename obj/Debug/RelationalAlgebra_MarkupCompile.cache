@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\.тех\VS\RelationalAlgebra\obj\Debug\
+C:\Users\Лиза\Source\Repos\haustovskii\RelationalAlgebra\obj\Debug\
 RelationalAlgebra
 none
 false
 DEBUG;TRACE
-D:\.тех\VS\RelationalAlgebra\App.xaml
+C:\Users\Лиза\Source\Repos\haustovskii\RelationalAlgebra\App.xaml
 5681597818
 
-10-243310534
-1321375833135
+91838778084
+132-1666849449
 AddTableWindow.xaml;InfoWindow.xaml;MainWindow.xaml;NameColumnWindow.xaml;WorkWindow.xaml;
 
-True
+False
 
