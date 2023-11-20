@@ -9,7 +9,7 @@
     Width="700"
     Height="500"
     AllowsTransparency="True"
-    FontSize="20"
+    FontSize="16"
     WindowStartupLocation="CenterScreen"
     Icon="/Images/icon.ico"
     ResizeMode="CanResize"
@@ -56,14 +56,26 @@
                 <ImageBrush ImageSource="Images/Back.jpg"/>
             </Grid.Background>
             <StackPanel>
+                <StackPanel>
+                    <TextBlock Text="Министерство образования Тульской области" HorizontalAlignment="Center"/>
+                    <TextBlock Text="ГОСУДАРСТВЕННОЕ ПРОФЕССИОНАЛЬНОЕ ОБРАЗОВАТЕЛЬНОЕ УЧРЕЖДЕНИЕ" HorizontalAlignment="Center"/>
+                    <TextBlock Text="ТУЛЬСКОЙ ОБЛАСТИ" HorizontalAlignment="Center"/>
+                    <TextBlock Text="«ТУЛЬСКИЙ КОЛЛЕДЖ СТРОИТЕЛЬСТВА И ОТРАСЛЕВЫХ ТЕХНОЛОГИЙ»" HorizontalAlignment="Center"/>
+                    <Image Source="Images/logo.png" Width="135" Margin="0,10,0,10"/>
+                    <TextBlock Text="Тренажер"/>
+                    <TextBlock Text="с элементами учебного пособия"/>
+                    <TextBlock Text="«Операции реляционной алгебры»"/>
+                </StackPanel>
+            <StackPanel Width="150">
                 <Border Style="{StaticResource BrdHelp}">
                     <Button
                Style="{StaticResource BtnHelp}"
-                Width="170"
+                Width="130"
                 Height="32"
                 Click="Button_Click"
                 Content="Начать!" />
                 </Border>
+            </StackPanel>
             </StackPanel>
         </Grid>
         

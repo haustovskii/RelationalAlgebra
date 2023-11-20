@@ -220,5 +220,11 @@
     <Resource Include="Images\closewhite.png" />
     <Resource Include="Images\minsizewhite.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
