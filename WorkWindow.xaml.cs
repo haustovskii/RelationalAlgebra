@@ -22,12 +22,11 @@ namespace RelationalAlgebra
         }
         string tableName = null;
         int columnCount = 0;
+        private string currentOperation;
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
-            {
                 this.DragMove();
-            }
         }
         private void ImgClose_MouseDown(object sender, RoutedEventArgs e) => Close();
         private void ImgPollUp_MouseDown(object sender, RoutedEventArgs e) => WindowState = WindowState.Minimized;
@@ -100,6 +99,7 @@ namespace RelationalAlgebra
 
             return output.ToString();
         }
+        //Создание новой таблицы
         private void AddTab(DataTable dataTable)
         {
             DataGrid dataGrid = new DataGrid();
@@ -114,6 +114,7 @@ namespace RelationalAlgebra
             MainTabControl.Items.Add(tabItem);
             MainTabControl.SelectedItem = tabItem;
         }
+        //Добавление данных о новой таблице
         private void BtnAddTable_Click(object sender, RoutedEventArgs e)
         {
             AddTableWindow addTable = new AddTableWindow
@@ -123,7 +124,10 @@ namespace RelationalAlgebra
             addTable.ShowDialog();
             tableName = addTable.TableName;
             columnCount = addTable.ColumnCount;
-
+            if(addTable.IsNullData)
+            {
+                MessageBox.Show("Пользователь прервал добавление");//////////////////////////////////////////////////////
+            }
             // Создаем новую таблицу
             DataTable newTable = new DataTable(tableName);
 
@@ -155,10 +159,10 @@ namespace RelationalAlgebra
 
             MessageBox.Show($"{tableName} с {columnCount} столбцов добавлена");
         }
-
+        //Загрузка таблиц из файла
         private void BtnLoadTables_Click(object sender, RoutedEventArgs e)
         {
-            if (MainTabControl.Items != null)
+            if (MainTabControl.Items.Count > 0)
             {
                 MessageBoxResult message = MessageBox.Show("Существующие данные будут удалены, продолжить?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (message == MessageBoxResult.No)
@@ -180,32 +184,60 @@ namespace RelationalAlgebra
                             DataTable dataTable = new DataTable();
                             dataTable.TableName = reader.Name;
                             // Чтение данных из Excel
-                            while (reader.Read())
+                            try
                             {
-                                if (reader.Depth == 0)
+                                while (reader.Read())
                                 {
-                                    for (int i = 0; i < reader.FieldCount; i++)
+                                    if (reader.Depth == 0)
                                     {
-                                        dataTable.Columns.Add(reader.GetValue(i).ToString());
+                                        bool isHeaderRowEmpty = false;
+
+                                        for (int i = 0; i < reader.FieldCount; i++)
+                                        {
+                                            if (string.IsNullOrWhiteSpace(reader.GetValue(i)?.ToString()))
+                                            {
+                                                // Если хотя бы одна ячейка пустая, помечаем строку как пустую
+                                                isHeaderRowEmpty = true;
+                                                break;
+                                            }
+                                        }
+                                        if (isHeaderRowEmpty)// Пропускаем обработку строки с пустой ячейкой
+                                            continue;
+                                        for (int i = 0; i < reader.FieldCount; i++)
+                                        {
+                                            if (string.IsNullOrWhiteSpace(reader.GetValue(i)?.ToString()))
+                                            {
+                                                // Пропускаем обработку столбца с пустой ячейкой
+                                                continue;
+                                            }
+                                            dataTable.Columns.Add(reader.GetValue(i).ToString());
+                                        }
                                     }
-                                }
-                                else
-                                {
-                                    DataRow row = dataTable.NewRow();
-                                    for (int i = 0; i < Math.Min(reader.FieldCount, dataTable.Columns.Count); i++)
+                                    else
                                     {
-                                        row[i] = reader.GetValue(i);
+                                        DataRow row = dataTable.NewRow();
+                                        for (int i = 0; i < Math.Min(reader.FieldCount, dataTable.Columns.Count); i++)
+                                        {
+                                            row[i] = reader.GetValue(i);
+                                        }
+                                        dataTable.Rows.Add(row);
                                     }
-                                    dataTable.Rows.Add(row);
                                 }
                             }
-
+                            catch (Exception ex)
+                            {
+                                // Обработка исключения (например, если встретится объединенная ячейка)
+                                MessageBox.Show($"Ошибка при обработке файла: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error); ////////////////////////////////////////////////////
+                                return; // Прерываем выполнение метода
+                            }
                             AddTab(dataTable);
                         } while (reader.NextResult());
                     }
                 }
             }
+            MessageBox.Show("Пользователь прервал загрузку");///////////////////////////////////////////////////////////
         }
+        //Сохранение всех таблиц
         private void BtnSaveTables_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog
@@ -215,36 +247,48 @@ namespace RelationalAlgebra
 
             if (saveFileDialog.ShowDialog() == true)
             {
-                using (var workbook = new XLWorkbook())
+                try
                 {
-                    foreach (var tabItem in MainTabControl.Items)
-                        if (tabItem is TabItem && ((TabItem)tabItem).Content is DataGrid)
-                        {
-                            var dataGrid = (DataGrid)((TabItem)tabItem).Content;
-                            var dataView = (DataView)dataGrid.ItemsSource;
-                            var dataTable = dataView.ToTable();
-
-                            if (dataTable != null)
+                    using (var workbook = new XLWorkbook())
+                    {
+                        foreach (var tabItem in MainTabControl.Items)
+                            if (tabItem is TabItem && ((TabItem)tabItem).Content is DataGrid)
                             {
-                                var worksheet = workbook.Worksheets.Add(dataTable.TableName);
-                                // Запись заголовков столбцов
-                                for (int col = 1; col <= dataTable.Columns.Count; col++)
-                                    worksheet.Cell(1, col).Value = dataTable.Columns[col - 1].ColumnName;
-                                // Запись данных
-                                for (int row = 0; row < dataTable.Rows.Count; row++)
+                                var dataGrid = (DataGrid)((TabItem)tabItem).Content;
+                                var dataView = (DataView)dataGrid.ItemsSource;
+                                var dataTable = dataView.ToTable();
+
+                                if (dataTable != null)
                                 {
+                                    var worksheet = workbook.Worksheets.Add(dataTable.TableName);
+                                    // Запись заголовков столбцов
                                     for (int col = 1; col <= dataTable.Columns.Count; col++)
+                                        worksheet.Cell(1, col).Value = dataTable.Columns[col - 1].ColumnName;
+                                    // Запись данных
+                                    for (int row = 0; row < dataTable.Rows.Count; row++)
                                     {
-                                        var cellValue = dataTable.Rows[row][col - 1];
-                                        worksheet.Cell(row + 2, col).Value = GetXLCellValue(cellValue);
+                                        for (int col = 1; col <= dataTable.Columns.Count; col++)
+                                        {
+                                            var cellValue = dataTable.Rows[row][col - 1];
+                                            worksheet.Cell(row + 2, col).Value = GetXLCellValue(cellValue);
+                                        }
                                     }
                                 }
                             }
-                        }
-                    workbook.SaveAs(saveFileDialog.FileName);
+                        workbook.SaveAs(saveFileDialog.FileName);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Обработка исключения (например, если встретится объединенная ячейка)
+                    MessageBox.Show($"Ошибка при обработке файла: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return; // Прерываем выполнение метода
                 }
             }
+            else
+                MessageBox.Show("Пользователь прервал сохранение"); ///////////////////////////////////////////
         }
+        //Получение нужного типа данных
         private XLCellValue GetXLCellValue(object value)
         {
             if (value is int)
@@ -257,7 +301,7 @@ namespace RelationalAlgebra
             }
             return value.ToString();
         }
-        private string currentOperation; // Объявляем переменную currentOperation
+        //Клик по кнопке операции
         private void OperationButton_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button)
@@ -271,6 +315,12 @@ namespace RelationalAlgebra
                 // Устанавливаем текущую операцию в TextBox
                 TbxOperation.Text = currentOperation;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //получить отсортированные данные
+            //реализовать операцию объеденение
         }
     }
 }

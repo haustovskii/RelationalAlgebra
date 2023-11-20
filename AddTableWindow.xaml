@@ -15,7 +15,10 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
-    <Border BorderBrush="Gray" BorderThickness="1">
+    <Border
+        Background="#182d33"
+        BorderBrush="Gray"
+        BorderThickness="1">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="35" />
@@ -27,6 +30,7 @@
                     <TextBlock
                         Margin="0,4"
                         HorizontalAlignment="Center"
+                        Foreground="White"
                         Text="Новая таблица" />
                 </StackPanel>
                 <StackPanel
@@ -38,14 +42,14 @@
                         <Image
                             Name="ImgPollUp"
                             MouseDown="ImgPollUp_MouseDown"
-                            Source="Images/minsize.png"
+                            Source="Images/minsizewhite.png"
                             Style="{StaticResource ImgWindow}" />
                     </Border>
                     <Border Style="{StaticResource BrdWindowClose}">
                         <Image
                             Name="ImgClose"
                             MouseDown="ImgClose_MouseDown"
-                            Source="Images/close.png"
+                            Source="Images/closewhite.png"
                             Style="{StaticResource ImgWindow}" />
                     </Border>
                 </StackPanel>
@@ -85,18 +89,18 @@
                             Width="100"
                             Height="32"
                             Margin="5"
+                            Background="#386977"
                             Click="BtnOk_Click"
-                            Content="ОК" 
-                            Foreground="White"
-                            Background="#386977"/>
+                            Content="ОК"
+                            Foreground="White" />
                         <Button
                             Name="BtnClose"
                             Width="100"
                             Height="32"
                             Margin="5"
+                            Background="#FFA809"
                             Click="BtnClose_Click"
-                            Content="Отмена"
-                            Background="#FFA809"/>
+                            Content="Отмена" />
                     </StackPanel>
                 </StackPanel>
             </Border>

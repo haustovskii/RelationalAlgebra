@@ -10,7 +10,7 @@
             <Setter Property="Padding" Value="7" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#D0D0D0" />
+                    <Setter Property="Background" Value="LightGray" />
                 </Trigger>
             </Style.Triggers>
         </Style>

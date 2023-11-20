@@ -213,7 +213,7 @@
                                 Width="230"
                                 Height="32"
                                 Margin="10"
-                                Content="Выполнить выражение" />
+                                Content="Выполнить выражение" Click="Button_Click" />
                             <TextBox
                                 Name="TbxOperation"
                                 Width="320"
