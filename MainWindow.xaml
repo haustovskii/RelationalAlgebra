@@ -11,7 +11,7 @@
     AllowsTransparency="True"
     FontSize="16"
     WindowStartupLocation="CenterScreen"
-    Icon="/Images/icon.ico"
+    Icon="/Images/icon.png"
     ResizeMode="CanResize"
     WindowStyle="None"
     mc:Ignorable="d">
@@ -26,7 +26,7 @@
                 <TextBlock
                     Margin="0,4"
                     HorizontalAlignment="Center"
-                    Text="Тренажер «Реляционная алгебра»" />
+                   />
             </StackPanel>
             <StackPanel
                 Margin="5,0"

@@ -54,7 +54,7 @@
             <Border
                 Grid.Row="1"
                 Margin="5"
-                Background="LightGray"
+                Background="#E5DED2"
                 BorderBrush="DarkGray"
                 BorderThickness="1">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -80,7 +80,9 @@
                             Height="32"
                             Margin="5"
                             Click="BtnOk_Click"
-                            Content="ОК" />
+                            Content="ОК" 
+                            Foreground="White"
+                            Background="#386977"/>
                     </StackPanel>
                 </StackPanel>
             </Border>
