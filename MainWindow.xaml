@@ -62,9 +62,21 @@
                     <TextBlock Text="ТУЛЬСКОЙ ОБЛАСТИ" HorizontalAlignment="Center"/>
                     <TextBlock Text="«ТУЛЬСКИЙ КОЛЛЕДЖ СТРОИТЕЛЬСТВА И ОТРАСЛЕВЫХ ТЕХНОЛОГИЙ»" HorizontalAlignment="Center"/>
                     <Image Source="Images/logo.png" Width="135" Margin="0,10,0,10"/>
-                    <TextBlock Text="Тренажер"/>
-                    <TextBlock Text="с элементами учебного пособия"/>
-                    <TextBlock Text="«Операции реляционной алгебры»"/>
+                    <TextBlock Text="Тренажер" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+                    <TextBlock Text="с элементами учебного пособия" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+                    <TextBlock Text="«Операции реляционной алгебры»" HorizontalAlignment="Center" FontSize="24" FontWeight="Bold" Foreground="#386977" Margin="0,0,0,20"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20,0,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="Исполнители:"/>
+                        <TextBlock Text="студенты группы И 3-6"/>
+                        <TextBlock Text="Рукводитель" Margin="0,10,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="400,0,0,0">
+                        <TextBlock Text="Т. А. Хаустов" HorizontalAlignment="Right"/>
+                        <TextBlock Text="Е. О. Кузина" HorizontalAlignment="Right"/>
+                        <TextBlock Text="Т. Ю. Жук" HorizontalAlignment="Right" Margin="0,10,0,0"/>
+                    </StackPanel>
                 </StackPanel>
             <StackPanel Width="150">
                 <Border Style="{StaticResource BrdHelp}">
