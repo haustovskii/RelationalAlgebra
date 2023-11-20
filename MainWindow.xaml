@@ -49,12 +49,23 @@
                 </Border>
             </StackPanel>
         </Grid>
+
+
         <Grid Grid.Row="1">
-            <Button
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/Back.jpg"/>
+            </Grid.Background>
+            <StackPanel>
+                <Border Style="{StaticResource BrdHelp}">
+                    <Button
+               Style="{StaticResource BtnHelp}"
                 Width="170"
                 Height="32"
                 Click="Button_Click"
-                Content="Click on me" />
+                Content="Начать!" />
+                </Border>
+            </StackPanel>
         </Grid>
+        
     </Grid>
 </Window>
