@@ -5,11 +5,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:RelationalAlgebra"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Width="1200"
-    Height="800"
+    MinWidth="1300"
+    MinHeight="900"
+    MaxWidth="1300"
     AllowsTransparency="True"
     FontSize="20"
-    Icon="/Images/icon.ico"
+    Icon="/Images/icon.png"
     ResizeMode="CanResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
@@ -81,9 +82,6 @@
                             Name="BtnSaveTables"
                             Click="BtnSaveTables_Click"
                             Content="Сохранить таблицы" />
-                        <Button Content="Загрузить задание" />
-                        <Button Content="Показать задание" IsEnabled="False" />
-                        <Button Content="Завершить задание" IsEnabled="False" />
                     </StackPanel>
                     <Border VerticalAlignment="Bottom" Style="{StaticResource BrdHelp}">
                         <Button
@@ -121,37 +119,65 @@
                                 <TextBlock
                                     Margin="0,7,0,0"
                                     Foreground="White"
-                                    Text="Базовые операции"
+                                    Text="Операции реляционной алгебры"
                                     TextAlignment="Center" />
                                 <StackPanel Orientation="Horizontal">
                                     <Button
                                         Click="OperationButton_Click"
-                                        Content="𝖴"
-                                        Style="{StaticResource BtnOperation}" />
+                                        Content="∪"
+                                        Style="{StaticResource BtnOperation}">
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Операция объеденения" />
+                                        </Button.ToolTip>
+                                    </Button>
                                     <Button
                                         Click="OperationButton_Click"
                                         Content="∩"
-                                        Style="{StaticResource BtnOperation}" />
+                                        Style="{StaticResource BtnOperation}">
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Операция пересечения" />
+                                        </Button.ToolTip>
+                                    </Button>
                                     <Button
                                         Click="OperationButton_Click"
                                         Content="/"
-                                        Style="{StaticResource BtnOperation}" />
+                                        Style="{StaticResource BtnOperation}">
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Операция разности" />
+                                        </Button.ToolTip>
+                                    </Button>
                                     <Button
                                         Click="OperationButton_Click"
                                         Content="×"
-                                        Style="{StaticResource BtnOperation}" />
+                                        Style="{StaticResource BtnOperation}">
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Операция декатрового произведения" />
+                                        </Button.ToolTip>
+                                    </Button>
                                     <Button
                                         Click="OperationButton_Click"
                                         Content="σ"
-                                        Style="{StaticResource BtnOperation}" />
+                                        Style="{StaticResource BtnOperation}">
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Операция селекции (условия выборки)" />
+                                        </Button.ToolTip>
+                                    </Button>
                                     <Button
                                         Click="OperationButton_Click"
                                         Content="п"
-                                        Style="{StaticResource BtnOperation}" />
+                                        Style="{StaticResource BtnOperation}">
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Операция проекции" />
+                                        </Button.ToolTip>
+                                    </Button>
                                     <Button
                                         Click="OperationButton_Click"
                                         Content="⋈"
-                                        Style="{StaticResource BtnOperation}" />
+                                        Style="{StaticResource BtnOperation}">
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Операция соеденения" />
+                                        </Button.ToolTip>
+                                    </Button>
                                 </StackPanel>
                             </StackPanel>
                             <Border
@@ -176,63 +202,45 @@
                                 <TextBlock
                                     Margin="0,7,0,0"
                                     Foreground="White"
-                                    Text="Дополнительные операции"
+                                    Text="Операции удаления"
                                     TextAlignment="Center" />
                                 <StackPanel Orientation="Horizontal">
+                                    <Button FontSize="20" Style="{StaticResource BtnOperation}">
+                                        <Button.Content>
+                                            <Image Source="/Images/row.png" />
+                                        </Button.Content>
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Удаление строки" />
+                                        </Button.ToolTip>
+                                    </Button>
                                     <Button
-                                        Click="OperationButton_Click"
-                                        Content="⟕"
-                                        Style="{StaticResource BtnOperation}" />
-                                    <Button
-                                        Click="OperationButton_Click"
-                                        Content="⟖"
-                                        Style="{StaticResource BtnOperation}" />
-                                    <Button
-                                        Click="OperationButton_Click"
-                                        Content="⟗"
-                                        Style="{StaticResource BtnOperation}" />
-                                    <Button
-                                        Click="OperationButton_Click"
-                                        Content="⋉"
-                                        Style="{StaticResource BtnOperation}" />
-                                    <Button
-                                        Click="OperationButton_Click"
-                                        Content="∧"
-                                        Style="{StaticResource BtnOperation}" />
-                                    <Button
-                                        Click="OperationButton_Click"
-                                        Content="∨"
-                                        Style="{StaticResource BtnOperation}" />
+                                        Width="100"
+                                        Content="Столбца"
+                                        FontSize="20"
+                                        Style="{StaticResource BtnOperation}">
+                                        <Button.ToolTip>
+                                            <ToolTip Content="Удаление столбца" />
+                                        </Button.ToolTip>
+                                    </Button>
+
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
                     </Border>
                     <Grid Grid.Row="1" Grid.ColumnSpan="2">
                         <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                            <TextBox
+                                Name="TbxOperation"
+                                Width="760"
+                                Height="32"
+                                Margin="10" />
                             <Button
+                                Name="BtnRelationalOperation"
                                 Width="230"
                                 Height="32"
                                 Margin="10"
-                                Content="Выполнить выражение" Click="Button_Click" />
-                            <TextBox
-                                Name="TbxOperation"
-                                Width="320"
-                                Height="32" />
-                        </StackPanel>
-                        <StackPanel
-                            Margin="10,0"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Center"
-                            Orientation="Horizontal">
-                            <TextBlock
-                                Margin="10"
-                                VerticalAlignment="Center"
-                                Text="Имя результата:" />
-                            <TextBox
-                                Name="TbxResult"
-                                Width="170"
-                                Height="32"
-                                IsReadOnly="True" />
+                                Click="BtnRelationalOperation_Click"
+                                Content="Выполнить выражение" />
                         </StackPanel>
                     </Grid>
                     <Border

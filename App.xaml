@@ -41,16 +41,16 @@
             <Setter Property="Margin" Value="10" />
             <Setter Property="Width" Value="190" />
             <Setter Property="Height" Value="32" />
-            <Setter Property="Background" Value="#d9d8dc"/>
+            <Setter Property="Background" Value="#d9d8dc" />
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Effect">
                 <Setter.Value>
                     <DropShadowEffect
-            BlurRadius="15"
-            Direction="-90"
-            Opacity="0.2"
-            ShadowDepth="7"
-            Color="Gray" />
+                        BlurRadius="15"
+                        Direction="-90"
+                        Opacity="0.2"
+                        ShadowDepth="7"
+                        Color="Gray" />
                 </Setter.Value>
             </Setter>
         </Style>

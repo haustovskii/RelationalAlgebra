@@ -44,5 +44,10 @@ namespace RelationalAlgebra
                 this.Close();
             }
         }
+
+        private void TbxCountColumns_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
     }
 }

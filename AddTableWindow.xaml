@@ -76,8 +76,7 @@
                                 Name="TbxCountColumns"
                                 Width="180"
                                 Height="32"
-                                Margin="5"
-                                PreviewTextInput="TbxCountColumns_PreviewTextInput" />
+                                Margin="5"  PreviewTextInput="TbxCountColumns_PreviewTextInput"/>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel
